@@ -1,5 +1,7 @@
 # Liberfly - Processo Seletivo Back-End
 
+# [Vídeo da apresentação do código e seu funcionamento](https://www.loom.com/share/c313c2d6c7f442f9aff70aca6b06f2f8)
+
 Este projeto foi desenvolvido como parte do processo seletivo da Liberfly. Ele é uma API RESTful construída com Laravel, utilizando autenticação JWT e documentada com Swagger.
 
 ## Funcionalidades
