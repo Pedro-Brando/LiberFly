@@ -34,13 +34,13 @@ git clone https://github.com/seu-usuario/seu-repositorio.git
 cd seu-repositorio
 ```
 
-###Passo 2: Instalar Dependências
+### Passo 2: Instalar Dependências
 ```bash
 composer install
 npm install
 ```
 
-###Passo 3: Configurar o Arquivo .env
+### Passo 3: Configurar o Arquivo .env
 Crie um arquivo .env a partir do .env.example:
 ```bash
 cp .env.example .env
@@ -60,17 +60,17 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-###Passo 4: Gerar a Chave da Aplicação
+### Passo 4: Gerar a Chave da Aplicação
 ```bash
 php artisan key:generate
 ```
 
-###Passo 5: Rodar as Migrações
+### Passo 5: Rodar as Migrações
 ```bash
 php artisan migrate --seed
 ```
 
-###Passo 6: Iniciar o Servidor
+### Passo 6: Iniciar o Servidor
 ```bash
 php artisan serve
 ```
