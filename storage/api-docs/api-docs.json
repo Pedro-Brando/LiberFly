@@ -1,0 +1,101 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API LiberFly",
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/produtos": {
+            "get": {
+                "tags": [
+                    "Produtos"
+                ],
+                "summary": "Listar todos os produtos",
+                "operationId": "cab8aec265fc5e5ab4a1d09399ead918",
+                "responses": {
+                    "200": {
+                        "description": "Lista de produtos retornada com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Produto"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/produtos/{id}": {
+            "get": {
+                "tags": [
+                    "Produtos"
+                ],
+                "summary": "Buscar um produto por ID",
+                "operationId": "298e77ccdf34792d1e380c79685ec28c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID do produto",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Produto encontrado com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Produto"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Produto não encontrado"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Produto": {
+                "title": "Produto",
+                "properties": {
+                    "id": {
+                        "description": "ID do produto",
+                        "type": "integer"
+                    },
+                    "nome": {
+                        "description": "Nome do produto",
+                        "type": "string"
+                    },
+                    "preco": {
+                        "description": "Preço do produto",
+                        "type": "number",
+                        "format": "float"
+                    },
+                    "estoque": {
+                        "description": "Quantidade em estoque",
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Produtos",
+            "description": "Produtos"
+        }
+    ]
+}
