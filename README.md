@@ -76,3 +76,71 @@ php artisan serve
 ```
 
 A aplicação estará rodando em http://localhost:8000.
+
+## Autenticação JWT
+
+### Rota de Login:
+Você precisará autenticar um usuário para obter o token JWT. Use a rota de login:
+- URL: /api/auth/login
+- Método: POST
+- Parâmetros:
+-- email: Email do usuário.
+-- password: Senha do usuário.
+Exemplo de requisição (usando Postman ou cURL):
+```bash
+{
+    "email": "email@example.com",
+    "password": "password"
+}
+```
+A resposta será um token JWT que deve ser usado nas outras requisições como autorização.
+
+### Endpoints da API
+# 1. Listar Produtos
+- URL: /api/produtos
+- Método: GET
+- Autenticação: Bearer Token (JWT)
+Exemplo de Resposta:
+```bash
+[
+    {
+        "id": 1,
+        "nome": "Produto 1",
+        "preco": "99.99",
+        "descricao": "Descrição do produto 1"
+    },
+    {
+        "id": 2,
+        "nome": "Produto 2",
+        "preco": "199.99",
+        "descricao": "Descrição do produto 2"
+    }
+]
+```
+
+# 2. Buscar produto por ID
+-URL: /api/produtos/{id}
+-Método: GET
+-Autenticação: Bearer Token (JWT)
+Exemplo de Resposta:
+```bash
+{
+    "id": 1,
+    "nome": "Produto 1",
+    "preco": "99.99",
+    "descricao": "Descrição do produto 1"
+}
+```
+
+### Testes Automatizados
+Para rodar os testes de integração (Feature Tests), utilize o comando:
+```bash
+php artisan test
+```
+
+## Documentação da API com Swagger
+A documentação da API foi gerada utilizando o Swagger. Para visualizar a documentação no navegador:
+
+-Certifique-se de que a aplicação está rodando.
+-Acesse http://localhost:8000/api/documentation.
+A documentação mostrará todos os endpoints disponíveis, parâmetros, e exemplos de respostas.
